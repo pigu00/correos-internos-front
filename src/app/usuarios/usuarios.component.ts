@@ -14,12 +14,12 @@ export class UsuariosComponent implements OnInit {
   private usuariosSubscriber!: Subscription
 
 
+  
   constructor(private UsuarioServicio:UsuariosService) { }
-
   ngOnInit(): void {
     
     this.listarUsuarios()
-
+    
   }
 
   listarUsuarios(){

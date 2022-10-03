@@ -32,6 +32,8 @@ export class RegistroUsuariosComponent implements OnInit {
     nombreUsuario: ['', [Validators.minLength(5)]],
     contrasena: ['', [Validators.required]],
     recontrasena: [null, [Validators.required]],
+    pais:['',[Validators.required]],
+    ciudad:['',[Validators.required]]
   })
   
 ngOnInit(): void {
@@ -44,10 +46,11 @@ ngOnInit(): void {
     const usuario: IUsuarios = {
       apellido: this.formRegistro.value.apellido,
       nombre: this.formRegistro.value.nombre,
-      usuario: this.formRegistro.value.usuario,
+      nombreUsuario: this.formRegistro.value.nombreUsuario,
       contrasena: this.formRegistro.value.contrasena,
       recontrasena: this.formRegistro.value.recontrasena,
-      pais: ''
+      pais: this.formRegistro.value.pais,
+      ciudad: this.formRegistro.value.ciudad
     }
 
     this.UsuarioServicio.guardarUsuario(usuario).subscribe(()=>{

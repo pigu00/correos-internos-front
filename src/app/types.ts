@@ -15,8 +15,9 @@ export interface IPais {
 export interface IUsuarios{
     apellido: string;
     nombre:string;
-    usuario:string;
+    nombreUsuario:string;
     contrasena:string;
     recontrasena:string;
     pais:string;
+    ciudad:string
 }

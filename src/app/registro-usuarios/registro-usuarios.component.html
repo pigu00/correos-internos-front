@@ -45,18 +45,23 @@
       />
     </mat-form-field>
     <br />
-    <!-- <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill">
       <mat-label>Pais</mat-label>
-      <mat-select [formControl]="pais">
-        <mat-option>--</mat-option>
-        <mat-option *ngFor="let pais of paises" [value]="pais">
-          {{ pais.name }}
-        </mat-option>
-      </mat-select>
-      <mat-error *ngIf="pais.hasError('required')"
-        >Please choose an animal</mat-error
-      >
-    </mat-form-field> -->
+      <select matNativeControl required formControlName="pais">
+        <option value="Argentina">Argentina</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Uruguay">Uruguay</option>
+      </select>
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Ciudad</mat-label>
+      <select matNativeControl required formControlName="ciudad">
+        <option value="Buenos Aires">Buenos Aires</option>
+        <option value="San Pablo">San Pablo</option>
+        <option value="Montevideo">Montevideo</option>
+      </select>
+    </mat-form-field>
     <br />
     <button mat-raised-button [disabled]="!formRegistro.valid">Enviar</button>
   </form>

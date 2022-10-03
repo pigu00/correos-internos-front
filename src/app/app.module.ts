@@ -13,6 +13,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MaterialModule} from './material/material.module';
 import { MatInputModule } from '@angular/material/input';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -20,7 +23,8 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [
     AppComponent,
     UsuariosComponent,
-    RegistroUsuariosComponent
+    RegistroUsuariosComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,8 @@ import { MatInputModule } from '@angular/material/input';
     MatSelectModule,
     MaterialModule,
     MatInputModule,
-    
+    MatMenuModule,
+    MatListModule
     ],
   exports: [],
   providers: [],
