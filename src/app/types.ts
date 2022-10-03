@@ -10,3 +10,13 @@ export interface IPais {
     value: string;
   viewValue: string;
   }
+
+
+export interface Iusuarios{
+    apellido: string;
+    nombre:string;
+    usuario:string;
+    contrasena:string;
+    recontrasena:string;
+    pais:string;
+}
