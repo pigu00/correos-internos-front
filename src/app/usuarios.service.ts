@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import{HttpClient}from '@angular/common/http';
 import { environment }from '../environments/environment';
 import { Observable } from 'rxjs';
-import { Usuarios,Iusuarios } from './types';
+import { Usuarios,IUsuarios } from './types';
 
 
 @Injectable({
@@ -12,11 +12,11 @@ export class UsuariosService {
 
   constructor(private servicio:HttpClient) {  }
 
-  consultarUsuario():Observable<any>{
-    return this.servicio.get<Usuarios[]>(environment.servidor +'/api/users')
+  consultarUsuario():Observable<IUsuarios[]>{
+    return this.servicio.get<IUsuarios[]>(environment.servidor +'/api/users')
   }
 
-  registroUsuario():Observable<any>{
-    return this.servicio.post<Usuarios[]>(environment.servidor +'/api/users')
+  guardarUsuario(usuario:IUsuarios ):Observable<void>{
+    return this.servicio.post<void>(environment.servidor +'/api/users', usuario)
   }
 }

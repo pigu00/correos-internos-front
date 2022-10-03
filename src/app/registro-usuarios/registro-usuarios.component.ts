@@ -10,37 +10,21 @@ import {
   ValidationErrors,
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { Usuarios, IPais, Iusuarios } from '../types';
-
+import { Usuarios, IPais, IUsuarios } from '../types';
 import{UsuariosService} from '../usuarios.service'
 
-interface Animal {
-  name: string;
-}
+
 
 @Component({
   selector: 'app-registro-usuarios',
   templateUrl: './registro-usuarios.component.html',
   styleUrls: ['./registro-usuarios.component.css'],
 })
-export class RegistroUsuariosComponent {
-  public dataUsuario: Usuarios[]=[]
-  private dataUsuarioSubscriber!: Subscription
-  selectedValue!: string;
+export class RegistroUsuariosComponent implements OnInit {
+  
 
   constructor(private fb: FormBuilder, private UsuarioServicio:UsuariosService) {}
-
-  // ngOnInit(): void {
-  //   this.dataUsuarioSubscriber = this.dataUsuario.save()
-  //   .subscribe((valor) => {
-  //     this.dataUsuario = valor
-
-  //     console.log(valor)
-  //   });
-  // }
-
-
-  mismatch!: Boolean;
+  
   
   formRegistro: FormGroup = this.fb.group({
     apellido: ['', Validators.required],
@@ -49,14 +33,27 @@ export class RegistroUsuariosComponent {
     contrasena: ['', [Validators.required]],
     recontrasena: [null, [Validators.required]],
   })
-  // pais = new FormControl<Animal | null>(null, Validators.required);
-  // selectFormControl = new FormControl('', Validators.required);
-  // paises: Animal[] = [
-  //   {name: 'Argentina'},
-  //   {name: 'Brasil'},
-  //   {name: 'Uruguay'}
-  // ]
   
+ngOnInit(): void {
+    
+}
+
+  //guardar datos form
+  agregarUsuario(event:Event){
+    event.preventDefault()
+    const usuario: IUsuarios = {
+      apellido: this.formRegistro.value.apellido,
+      nombre: this.formRegistro.value.nombre,
+      usuario: this.formRegistro.value.usuario,
+      contrasena: this.formRegistro.value.contrasena,
+      recontrasena: this.formRegistro.value.recontrasena,
+      pais: ''
+    }
+
+    this.UsuarioServicio.guardarUsuario(usuario).subscribe(()=>{
+      console.log('Usuario agragado')
+    })
+  }
 
   //validar usuario
   public validarNombreUsuario(nombreUsuario: string) {
@@ -66,16 +63,5 @@ export class RegistroUsuariosComponent {
     );
   }
 
-
-//guardar datos form
-  save(event:Event){
-    event.preventDefault()
-    const valor = this.formRegistro.value
-    console.log(valor)
-  }
-  
-
-
-  
   }
   

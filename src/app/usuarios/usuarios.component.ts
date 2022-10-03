@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Usuarios } from '../types';
+import { IUsuarios } from '../types';
 
 import{UsuariosService} from '../usuarios.service'
 
@@ -10,13 +10,19 @@ import{UsuariosService} from '../usuarios.service'
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
-  public usuarios: Usuarios[]=[]
+  public usuarios: IUsuarios[]=[]
   private usuariosSubscriber!: Subscription
 
 
   constructor(private UsuarioServicio:UsuariosService) { }
 
   ngOnInit(): void {
+    
+    this.listarUsuarios()
+
+  }
+
+  listarUsuarios(){
     this.usuariosSubscriber = this.UsuarioServicio.consultarUsuario()
     .subscribe((data) => {
       this.usuarios = data

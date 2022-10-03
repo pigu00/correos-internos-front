@@ -12,7 +12,7 @@ export interface IPais {
   }
 
 
-export interface Iusuarios{
+export interface IUsuarios{
     apellido: string;
     nombre:string;
     usuario:string;
