@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -24,7 +25,8 @@ import {MatListModule} from '@angular/material/list';
     AppComponent,
     UsuariosComponent,
     RegistroUsuariosComponent,
-    NavBarComponent
+    NavBarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

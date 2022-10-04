@@ -17,7 +17,6 @@ export interface IUsuarios{
     nombre:string;
     nombreUsuario:string;
     contrasena:string;
-    recontrasena:string;
     pais:string;
     ciudad:string
 }

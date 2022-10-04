@@ -1,11 +1,16 @@
-<h4>Listado de Usuarios</h4>
 
 
-
-<mat-selection-list #listaUsuarios [multiple]="false">
+<mat-card>
+<mat-card-title>Listado de Usuarios</mat-card-title>
+<mat-card-content><mat-selection-list #listaUsuarios [multiple]="false">
     <mat-list-option *ngFor="let usuario of this.usuarios" [value]="this.usuarios">
       {{usuario.nombreUsuario}}
     </mat-list-option>
   </mat-selection-list>
+</mat-card-content>
+
+</mat-card>
+
+
   
  

@@ -48,7 +48,6 @@ ngOnInit(): void {
       nombre: this.formRegistro.value.nombre,
       nombreUsuario: this.formRegistro.value.nombreUsuario,
       contrasena: this.formRegistro.value.contrasena,
-      recontrasena: this.formRegistro.value.recontrasena,
       pais: this.formRegistro.value.pais,
       ciudad: this.formRegistro.value.ciudad
     }
