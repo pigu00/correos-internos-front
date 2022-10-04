@@ -20,3 +20,10 @@ export interface IUsuarios{
     pais:string;
     ciudad:string
 }
+
+
+export interface IIniciarSesion{
+    nombreUsuario:string;
+    contrasena:string;
+   
+}
