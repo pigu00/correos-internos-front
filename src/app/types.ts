@@ -27,3 +27,11 @@ export interface IIniciarSesion{
     contrasena:string;
    
 }
+
+export interface IJwtResponse{
+    dataUser:{
+        nombreUsuario:string,
+        accessToken:string,
+        expiresIn: string 
+    }
+}
