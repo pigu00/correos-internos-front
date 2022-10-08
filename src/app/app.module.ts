@@ -17,6 +17,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import { LoginComponent } from './login/login.component';
+import { EnviarMensajesComponent } from './enviar-mensajes/enviar-mensajes.component';
+import {TextFieldModule} from '@angular/cdk/text-field';
 
 
 
@@ -26,7 +28,8 @@ import { LoginComponent } from './login/login.component';
     UsuariosComponent,
     RegistroUsuariosComponent,
     NavBarComponent,
-    LoginComponent
+    LoginComponent,
+    EnviarMensajesComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { LoginComponent } from './login/login.component';
     MaterialModule,
     MatInputModule,
     MatMenuModule,
-    MatListModule
+    MatListModule,
+    TextFieldModule
     ],
   exports: [],
   providers: [],
