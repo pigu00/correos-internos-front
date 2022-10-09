@@ -1,0 +1,14 @@
+<mat-card>
+    <mat-card-title>Mensajes enviados</mat-card-title>
+    
+        <mat-card-content><mat-selection-list #listaUsuarios [multiple]="false">
+            <mat-list-option *ngFor="let mensaje of this.mensajesEnviados" [value]="this.mensajesEnviados">
+              <p>Asunto {{mensaje.asunto}} </p>
+              <p>Mensaje {{mensaje.mensajeTexto}} </p>
+              
+            </mat-list-option>
+          </mat-selection-list>
+        </mat-card-content>
+  
+    
+    </mat-card>

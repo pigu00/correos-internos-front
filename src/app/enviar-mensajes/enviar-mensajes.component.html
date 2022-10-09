@@ -19,6 +19,24 @@
         </mat-select>
       </mat-form-field>
 
+      <br />
+      <mat-form-field appearance="fill">
+        <mat-label>Seleciona destinatario</mat-label>
+        <mat-select
+          [(value)]="selectedUser2"
+          matInput
+          type="text"
+          formControlName="usuarioDestino"
+          name="usuarioDestino"
+        >
+          <mat-option
+            [value]="destinatario.idusuario"
+            *ngFor="let destinatario of this.usuarios"
+            >{{ destinatario.nombreUsuario }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Asunto</mat-label>
         <input matInput type="text" formControlName="asunto" name="asunto" />

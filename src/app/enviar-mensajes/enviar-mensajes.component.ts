@@ -10,7 +10,7 @@ import {
   FormArray,
   ValidationErrors,
 } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { map, Observable, startWith, Subscription } from 'rxjs';
 import { Usuarios, IEnviarMensaje, IUsuarios } from '../types';
 import { coerceStringArray } from '@angular/cdk/coercion';
 
@@ -25,26 +25,33 @@ interface Food {
   styleUrls: ['./enviar-mensajes.component.css'],
 })
 export class EnviarMensajesComponent implements OnInit {
-  selectedValue!: string;
 
   public usuarios: IUsuarios[] = [];
   private usuariosSubscriber!: Subscription;
   public mensaje: IEnviarMensaje[] = [];
+  selectedValue!: string;
 
   constructor(
     private fb: FormBuilder,
     private UsuarioServicio: UsuariosService
   ) {}
 
-  enviarMensajeForm: FormGroup = this.fb.group({
-    idusuario: ['',[Validators.required]],
-    asunto: ['',[Validators.required]],
-    mensajeTexto: ['', [Validators.maxLength(144),Validators.required]],
-  });
+  
+  
 
-  ngOnInit(): void {
+  ngOnInit() {
+
     this.listarUsuarios();
+    
   }
+
+ 
+  enviarMensajeForm: FormGroup = this.fb.group({
+    idusuario: [''],
+    usuarioDestino: [''],
+    asunto: [''],
+    mensajeTexto: ['', [Validators.maxLength(144)]],
+  });
 
   listarUsuarios() {
     this.usuariosSubscriber = this.UsuarioServicio.consultarUsuario().subscribe(
@@ -55,8 +62,10 @@ export class EnviarMensajesComponent implements OnInit {
       }
     );
   }
-  selectedUser = 'selecciona un usuario';
 
+  selectedUser = 'selecciona un usuario';
+  selectedUser2 = 'seleciona destinatario';
+  
   enviarMensaje(event: Event) {
     event.preventDefault();
 
@@ -64,6 +73,7 @@ export class EnviarMensajesComponent implements OnInit {
       idusuario: this.enviarMensajeForm.value.idusuario,
       asunto: this.enviarMensajeForm.value.asunto,
       mensajeTexto: this.enviarMensajeForm.value.mensajeTexto,
+      usuarioDestino: this.enviarMensajeForm.value.usuarioDestino,
     };
     console.log(mensaje);
 

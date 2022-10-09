@@ -19,6 +19,9 @@ import {MatListModule} from '@angular/material/list';
 import { LoginComponent } from './login/login.component';
 import { EnviarMensajesComponent } from './enviar-mensajes/enviar-mensajes.component';
 import {TextFieldModule} from '@angular/cdk/text-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MensajesEnviadosComponent } from './mensajes-enviados/mensajes-enviados.component';
+import { MensajesRecibidosComponent } from './mensajes-recibidos/mensajes-recibidos.component';
 
 
 
@@ -29,7 +32,9 @@ import {TextFieldModule} from '@angular/cdk/text-field';
     RegistroUsuariosComponent,
     NavBarComponent,
     LoginComponent,
-    EnviarMensajesComponent
+    EnviarMensajesComponent,
+    MensajesEnviadosComponent,
+    MensajesRecibidosComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import {TextFieldModule} from '@angular/cdk/text-field';
     MatInputModule,
     MatMenuModule,
     MatListModule,
-    TextFieldModule
+    TextFieldModule,
+    MatAutocompleteModule
     ],
   exports: [],
   providers: [],

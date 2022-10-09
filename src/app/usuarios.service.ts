@@ -4,7 +4,7 @@ import { environment } from '../environments/environment';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-import { IJwtResponse, IUsuarios, IIniciarSesion, IEnviarMensaje } from './types';
+import { IJwtResponse, IUsuarios, IIniciarSesion, IEnviarMensaje, IMostrarMensajesEnviados } from './types';
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +22,11 @@ export class UsuariosService {
   consultarUsuario(): Observable<IUsuarios[]> {
     return this.servicio.get<IUsuarios[]>(environment.servidor + '/api/users');
   }
+
+  consultarMensajesEnviados(): Observable<IMostrarMensajesEnviados[]> {
+    return this.servicio.get<IMostrarMensajesEnviados[]>(environment.servidor + '/api/messages/sent');
+  }
+
 
   guardarUsuario(usuario: IUsuarios): Observable<void> {
     return this.servicio.post<void>(

@@ -9,6 +9,7 @@ export interface IEnviarMensaje {
   idusuario: number;
   asunto: string;
   mensajeTexto: string;
+  usuarioDestino: number;
 }
 
 export interface IPais {
@@ -31,10 +32,19 @@ export interface IIniciarSesion {
   contrasena: string;
 }
 
+export interface IMostrarMensajesEnviados{
+  usuarioFuente: string;
+  asunto:string;
+  mensajeTexto:string;
+  usuarioDestino:string;
+}
+
+
 export interface IJwtResponse {
   dataUser: {
     nombreUsuario: string;
     accessToken: string;
     expiresIn: string;
   };
+
 }
