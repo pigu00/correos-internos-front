@@ -34,6 +34,7 @@ export class RegistroUsuariosComponent implements OnInit {
     recontrasena: [null, [Validators.required]],
     pais:['',[Validators.required]],
     ciudad:['',[Validators.required]]
+    
   })
   
 ngOnInit(): void {
@@ -65,5 +66,10 @@ ngOnInit(): void {
     );
   }
 
+
+ // validar contraseñas iguales
+
+
+ 
   }
   

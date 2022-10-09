@@ -6,9 +6,9 @@ export interface Usuarios {
 }
 
 export interface IEnviarMensaje {
-  nombreUsuario: string;
+  idusuario: number;
   asunto: string;
-  mensaje: string;
+  mensajeTexto: string;
 }
 
 export interface IPais {
