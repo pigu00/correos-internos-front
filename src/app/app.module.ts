@@ -22,6 +22,8 @@ import {TextFieldModule} from '@angular/cdk/text-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MensajesEnviadosComponent } from './mensajes-enviados/mensajes-enviados.component';
 import { MensajesRecibidosComponent } from './mensajes-recibidos/mensajes-recibidos.component';
+import { MensajeriaComponent } from './mensajeria/mensajeria.component';
+import { NavMensajeriaComponent } from './nav-mensajeria/nav-mensajeria.component';
 
 
 
@@ -34,7 +36,9 @@ import { MensajesRecibidosComponent } from './mensajes-recibidos/mensajes-recibi
     LoginComponent,
     EnviarMensajesComponent,
     MensajesEnviadosComponent,
-    MensajesRecibidosComponent
+    MensajesRecibidosComponent,
+    MensajeriaComponent,
+    NavMensajeriaComponent
   ],
   imports: [
     BrowserModule,
